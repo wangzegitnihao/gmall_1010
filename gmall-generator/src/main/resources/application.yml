@@ -1,0 +1,48 @@
+server:
+  port: 80
+
+# mysql
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    #MySQL\u914D\u7F6E
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.192.129:3306/guli_wms?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: 123456
+    #oracle\u914D\u7F6E
+    #    driverClassName: oracle.jdbc.OracleDriver
+    #    url: jdbc:oracle:thin:@47.100.206.162:1521:xe
+    #    username: renren
+    #    password: 123456
+    #SQLServer\u914D\u7F6E
+    #    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    #    url: jdbc:sqlserver://192.168.10.10:1433;DatabaseName=renren_fast
+    #    username: sa
+    #    password: 123456
+    #PostgreSQL\u914D\u7F6E
+  #    driverClassName: org.postgresql.Driver
+  #    url: jdbc:postgresql://192.168.10.10:5432/renren_fast
+  #    username: postgres
+  #    password: 123456
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  resources:
+    static-locations: classpath:/static/,classpath:/views/
+
+
+mybatis:
+  mapperLocations: classpath:mapper/**/*.xml
+
+
+pagehelper:
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+
+#\u6307\u5B9A\u6570\u636E\u5E93\uFF0C\u53EF\u9009\u503C\u6709\u3010mysql\u3001oracle\u3001sqlserver\u3001postgresql\u3011
+guli:
+  database: mysql
+

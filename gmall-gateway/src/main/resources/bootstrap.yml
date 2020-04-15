@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: gateway-api
+  cloud:
+    nacos:
+      config:
+        server-addr: locahost:8848
+        namespace: 4658e6d2-d791-4ab0-a961-136b9ef2d139
+        file-extension: yml
