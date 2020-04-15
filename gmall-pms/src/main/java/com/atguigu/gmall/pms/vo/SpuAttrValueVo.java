@@ -1,7 +1,7 @@
 package com.atguigu.gmall.pms.vo;
 
 import com.atguigu.gmall.pms.entity.SpuAttrValueEntity;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.List;
 

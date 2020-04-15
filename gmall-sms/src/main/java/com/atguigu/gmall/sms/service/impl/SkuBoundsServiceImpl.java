@@ -37,7 +37,7 @@ public class SkuBoundsServiceImpl extends ServiceImpl<SkuBoundsMapper, SkuBounds
     }
 
     @Override
-    @Transactional
+
     public void saveSales(SaleVo saleVo) {
         SkuBoundsEntity skuBoundsEntity = new SkuBoundsEntity();
         skuBoundsEntity.setSkuId(saleVo.getSkuId());

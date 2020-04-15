@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>gamll-sms-interface</artifactId>
+    <artifactId>gmall-sms-interface</artifactId>
     <dependencies>
         <dependency>
             <groupId>com.atguigu</groupId>

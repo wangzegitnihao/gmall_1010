@@ -75,7 +75,7 @@ public class SpuServiceImpl extends ServiceImpl<SpuMapper, SpuEntity> implements
     }
 
     @Override
-    @GlobalTransactional
+
     public void bigSave(SpuVo spuVo) {
         spuVo.setCreateTime(new Date());
         spuVo.setUpdateTime(spuVo.getCreateTime());
