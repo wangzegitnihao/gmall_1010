@@ -18,10 +18,4 @@ import javax.sql.DataSource;
 public class DataSourceConfig {
 
 
-    /**
-     * 需要将 DataSourceProxy 设置为主数据源，否则事务无法回滚
-     *
-     * @return The default datasource
-     */
-
 }
