@@ -6,6 +6,7 @@ import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldType;
 
+import java.util.Date;
 import java.util.List;
 
 @Data
@@ -24,11 +25,11 @@ public class Goods {
 
     //排序筛选字段
     @Field(type = FieldType.Long)
-    private Long sales;//销量
+    private Long sales = 0l;//销量
     @Field(type = FieldType.Date)
-    private Data createTime;//新品
+    private Date createTime;//新品
     @Field(type = FieldType.Boolean)
-    private boolean store;//是否有货
+    private boolean store = false;//是否有货
 
     //聚合字段
     @Field(type = FieldType.Long)

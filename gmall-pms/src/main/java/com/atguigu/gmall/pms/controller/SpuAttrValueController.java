@@ -2,6 +2,8 @@ package com.atguigu.gmall.pms.controller;
 
 import java.util.List;
 
+import com.atguigu.gmall.pms.entity.SkuAttrValueEntity;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +36,14 @@ public class SpuAttrValueController {
     @Autowired
     private SpuAttrValueService spuAttrValueService;
 
+    @GetMapping("search/attr")
+    public ResponseVo<List<SpuAttrValueEntity>> querySearchAttrValue(
+            @RequestParam("spuId") Long spuId,
+            @RequestParam("attrIds") List<Long> attrIds
+    ){
+        List<SpuAttrValueEntity> list = this.spuAttrValueService.list(new QueryWrapper<SpuAttrValueEntity>().eq("spu_id", spuId).in("attr_id", attrIds));
+        return ResponseVo.ok(list);
+    }
     /**
      * 列表
      */

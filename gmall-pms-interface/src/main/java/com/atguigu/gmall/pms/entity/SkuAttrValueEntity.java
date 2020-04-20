@@ -1,22 +1,21 @@
-package com.atguigu.gmall.wms.entity;
+package com.atguigu.gmall.pms.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-
-import java.io.Serializable;
-import java.util.Date;
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
- * 库存工作单
+ * sku销售属性&值
  * 
  * @author fengge
  * @email fengge@atguigu.com
- * @date 2020-04-11 14:04:28
+ * @date 2020-04-04 09:54:09
  */
 @Data
-@TableName("wms_ware_order_bill_detail")
-public class WareOrderBillDetailEntity implements Serializable {
+@TableName("pms_sku_attr_value")
+public class SkuAttrValueEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -29,16 +28,20 @@ public class WareOrderBillDetailEntity implements Serializable {
 	 */
 	private Long skuId;
 	/**
-	 * sku_name
+	 * attr_id
 	 */
-	private String skuName;
+	private Long attrId;
 	/**
-	 * 购买个数
+	 * 销售属性名
 	 */
-	private Integer skuNum;
+	private String attrName;
 	/**
-	 * 工作单id
+	 * 销售属性值
 	 */
-	private Long taskId;
+	private String attrValue;
+	/**
+	 * 顺序
+	 */
+	private Integer sort;
 
 }

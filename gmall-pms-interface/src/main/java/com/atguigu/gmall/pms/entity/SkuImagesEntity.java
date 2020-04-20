@@ -2,21 +2,20 @@ package com.atguigu.gmall.pms.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-
-import java.io.Serializable;
-import java.util.Date;
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
- * 商品评价回复关系
+ * sku图片
  * 
  * @author fengge
  * @email fengge@atguigu.com
  * @date 2020-04-04 09:54:09
  */
 @Data
-@TableName("pms_comment_replay")
-public class CommentReplayEntity implements Serializable {
+@TableName("pms_sku_images")
+public class SkuImagesEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -25,12 +24,20 @@ public class CommentReplayEntity implements Serializable {
 	@TableId
 	private Long id;
 	/**
-	 * 评论id
+	 * sku_id
 	 */
-	private Long commentId;
+	private Long skuId;
 	/**
-	 * 回复id
+	 * 图片地址
 	 */
-	private Long replyId;
+	private String url;
+	/**
+	 * 排序
+	 */
+	private Integer sort;
+	/**
+	 * 默认图[0 - 不是默认图，1 - 是默认图]
+	 */
+	private Integer defaultStatus;
 
 }

@@ -5,5 +5,5 @@ spring:
     nacos:
       config:
         server-addr: locahost:8848
-        namespace: 967c7f66-b032-4461-b886-4a3ca9d31a55
+        namespace: 80b06ab4-10f0-42ff-8d70-3dc8c018efa7
         file-extension: yml
