@@ -1,9 +1,9 @@
 server:
-  port: 18086
+  port: 18087
 spring:
   cloud:
     nacos:
-      config:
+      discovery:
         server-addr: localhost:8848
     sentinel:
       transport:
@@ -22,16 +22,6 @@ spring:
       uris: 192.168.192.129:9200
   jackson:
     default-property-inclusion: non_null
-  rabbitmq:
-    host: 192.168.192.129
-    virtual-host: /zege
-    username: zege
-    password: zege
-    listener:
-      simple:
-        prefetch: 1
-        acknowledge-mode: manual
-
 feign:
   sentinel:
     enabled: true

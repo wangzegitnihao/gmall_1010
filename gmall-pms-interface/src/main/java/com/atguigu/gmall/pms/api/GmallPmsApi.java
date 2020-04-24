@@ -3,6 +3,7 @@ package com.atguigu.gmall.pms.api;
 import com.atguigu.gmall.common.bean.PageParamVo;
 import com.atguigu.gmall.common.bean.ResponseVo;
 import com.atguigu.gmall.pms.entity.*;
+import com.atguigu.gmall.pms.vo.CategoryVo;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 
@@ -31,4 +32,13 @@ public interface GmallPmsApi {
             @RequestParam("spuId") Long spuId,
             @RequestParam("attrIds") List<Long> attrIds
     );
+    @GetMapping("pms/spu/{id}")
+    public ResponseVo<SpuEntity> querySpuById(@PathVariable("id") Long id);
+
+    @GetMapping("pms/category/parent/{parentId}")
+    public ResponseVo<List<CategoryEntity>> querCategoriesByPid(@PathVariable("parentId") Long pid);
+
+    @GetMapping("pms/category/lvl1/{pid}")
+    public ResponseVo<List<CategoryVo>> queryCategoryVoByPid(@PathVariable("pid")Long pid);
+
 }

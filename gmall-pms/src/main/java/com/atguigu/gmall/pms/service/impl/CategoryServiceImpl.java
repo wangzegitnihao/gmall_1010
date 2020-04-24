@@ -5,9 +5,11 @@ import com.atguigu.gmall.common.bean.PageResultVo;
 import com.atguigu.gmall.pms.entity.CategoryEntity;
 import com.atguigu.gmall.pms.mapper.CategoryMapper;
 import com.atguigu.gmall.pms.service.CategoryService;
+import com.atguigu.gmall.pms.vo.CategoryVo;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -34,6 +36,15 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryMapper, CategoryEnt
         }
 
         return this.list(wrapper);
+    }
+    @Autowired
+    private CategoryMapper categoryMapper;
+
+    @Override
+    public List<CategoryVo> queryCategoryVoByPid(Long pid) {
+
+        
+        return categoryMapper.queryCategoryVoByPid(pid);
     }
 
 }

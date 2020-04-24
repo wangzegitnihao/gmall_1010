@@ -27,6 +27,11 @@ spring:
           uri: lb://ums-service
           predicates:
             - Path=/ums/**
+        - id: index-route
+          uri: lb://index-service
+          predicates:
+            - Path=/index/**
+
 
 
 

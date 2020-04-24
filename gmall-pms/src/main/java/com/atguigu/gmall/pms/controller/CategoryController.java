@@ -5,6 +5,7 @@ import com.atguigu.gmall.common.bean.PageResultVo;
 import com.atguigu.gmall.common.bean.ResponseVo;
 import com.atguigu.gmall.pms.entity.CategoryEntity;
 import com.atguigu.gmall.pms.service.CategoryService;
+import com.atguigu.gmall.pms.vo.CategoryVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,11 @@ public class CategoryController {
     @Autowired
     private CategoryService categoryService;
 
+    @GetMapping("lvl1/{pid}")
+    public ResponseVo<List<CategoryVo>> queryCategoryVoByPid(@PathVariable("pid")Long pid){
+        List<CategoryVo> categoryVos= this.categoryService.queryCategoryVoByPid(pid);
+        return ResponseVo.ok(categoryVos);
+    }
 
     @GetMapping("parent/{parentId}")
     public ResponseVo<List<CategoryEntity>> querCategoriesByPid(@PathVariable("parentId") Long pid){
